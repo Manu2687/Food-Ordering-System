@@ -1,0 +1,38 @@
+"""
+URL configuration for online_food_order_prj project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+from Home_App import views as hv
+
+urlpatterns = [
+    path('home/',hv.index, name='home'),  
+    path('',hv.index, name='home'),  
+    path('admin/',include('customadmin.urls')),
+    path('dj-admin/', admin.site.urls),
+    path('login/',hv.CustomerTableBackend.login_user, name='login'),
+    path('login-admin/',hv.AdminTableBackend.login_user, name='login-admin'),
+    path('signup/',hv.signup, name='signup'),
+    path('signout/',hv.signout, name='signout'),
+    path('index/',hv.index, name='index'),
+    path('admin-login/',hv.adminLogin, name='admin-login'),
+    path('admin-dashboard/',hv.adminDashboard, name='admin-dashboard'),
+
+    
+
+    # path('newHome/',hv.newHome, name='newHome'),
+
+]
