@@ -21,7 +21,6 @@ from Home_App import views as hv
 urlpatterns = [
     path('home/',hv.index, name='home'),  
     path('',hv.index, name='home'),  
-    path('admin/',include('customadmin.urls')),
     path('dj-admin/', admin.site.urls),
     path('login/',hv.CustomerTableBackend.login_user, name='login'),
     path('login-admin/',hv.AdminTableBackend.login_user, name='login-admin'),
