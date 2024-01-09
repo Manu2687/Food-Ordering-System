@@ -76,8 +76,8 @@
                     </div>
 
                     <div class="nav-option option6">
-                        <a href="{% url 'admin-dashboard-section' section='categories' %}">
-                            <h3> Settings</h3>
+                        <a href="{% url 'admin-dashboard-section' section='reservation' %}">
+                            <h3> Reservations</h3>
                         </a>
                     </div>
 
@@ -149,7 +149,9 @@
             </div> -->
 
             <div class="main-container">
-                {% block content %}{% endblock %}
+                {% block content %}
+                   <p>pie chart of order-category or order-date</p>
+                {% endblock %}
             </div>
 
 

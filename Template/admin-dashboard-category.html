@@ -9,6 +9,7 @@
         <div class="report-container">
             <div class="report-header">
                 <h1 class="recent-orders">Categories</h1>
+                <a href="{% url 'admin-dashboard-category-add' %}" class="btn-add">Add more categories</a>
             </div>
 
             <div class="report-body">
@@ -16,7 +17,6 @@
                     <h3 class="t-op">Id</h3>
                     <h3 class="t-op">Title</h3>
                     <h3 class="t-op">Features</h3>
-                    <h3 class="t-op">Active</h3>
                     <h3 class="t-op"></h3>
                 </div>
                 <div class="items">
@@ -25,11 +25,11 @@
                         <h3 class="t-op-nextlvl">{{ category.category_id}}</h3>
                         <h3 class="t-op-nextlvl">{{ category.category_title}}</h3>
                         <h3 class="t-op-nextlvl">{{ category.feature}}</h3>
-                        <h3 class="t-op-nextlvl label-tag">{{ category.active}}</h3>
                         <h3 class="t-op-nextlvl">
                             <div class="update-btn">
-                                <button class="btn-edit">Edit</button>
-                                <button class="btn-delete">Delete</button>
+                                <a href="{% url 'edit_category' category_id=category.category_id %}" class="btn-edit">Edit</a>
+                                <!-- <a href="/admin-dashboard-category-edit/{{ category_id }}" class="btn-edit">Edit</a> -->
+                                <a href="{% url 'admin-dashboard-category-delete' category_id=category.category_id %}" class="btn-delete">Delete</a>
                             </div>
                         </h3>
                     </div>
@@ -40,9 +40,12 @@
     </div>
 </section>
 
+
+
 <style>
     .btn-edit,
-    .btn-delete {
+    .btn-delete,
+    .btn-add {
         border: none;
         color: white;
         padding: 8px;
@@ -54,7 +57,7 @@
         cursor: pointer;
         border-radius: 15px;
     }
-    .btn-edit {
+    .btn-edit, .btn-add {
         background-color: #008CBA;
     }
     .btn-delete {

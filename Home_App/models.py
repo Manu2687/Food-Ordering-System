@@ -10,7 +10,9 @@ class category_table(models.Model):
     category_title = models.CharField(max_length=55)
     img_name = models.CharField(max_length = 55)
     feature = models.CharField(max_length = 90)
-    active = models.CharField(max_length = 9)
+
+    def __str__(self):
+        return str(self.category_id)
 
 #Order
 class order_table(models.Model):
@@ -44,7 +46,6 @@ class food_table(models.Model):
     img_name = models.CharField(max_length=20)
     category_id = models.ForeignKey(category_table,on_delete=models.CASCADE)
     feature = models.CharField(max_length=20)
-    active = models.CharField(max_length=10) 
     
 
 
@@ -66,4 +67,25 @@ class customer_table(models.Model):
     phone_no = models.CharField(max_length=10)
     user_id = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
+
+    def __str__(self):
+        return str(self.customer_id)
+
+
+
+# Reservation Table
+class reservation_table(models.Model):
+    reservation_id = models.AutoField(primary_key=True)
+    customer_id = models.ForeignKey(customer_table,on_delete=models.CASCADE)
+    date = models.DateField()
+    time = models.TimeField()
+    STATUS_CHOICES = [
+        ('pending','Pending'),
+        ('approved','Approved'),
+        ('denied','Denied'),
+    ]
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
+
+    def __str__(self):
+        return f"Reservation {self.reservation_id} for {self.customer_id} at {self.date} {self.time} - Status: {self.status}"
 

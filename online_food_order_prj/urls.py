@@ -28,8 +28,19 @@ urlpatterns = [
     path('signout/',hv.signout, name='signout'),
     path('index/',hv.index, name='index'),
     path('admin-login/',hv.adminLogin, name='admin-login'),
+    path('approve-reservation/<int:reservation_id>/', hv.approve_reservation_request, name='approve_reservation_request'),
+    path('deny-reservation/<int:reservation_id>/', hv.deny_reservation_request, name='deny_reservation_request'),
     path('admin-dashboard/',hv.adminDashboard, name='admin-dashboard'),
     path('admin-dashboard/<str:section>/',hv.adminDashboard, name='admin-dashboard-section'),
+    path('admin-dashboard-category-edit/<int:category_id>/',hv.edit_category, name='edit_category'),
+    path('admin-dashboard-category-delete/<int:category_id>/',hv.delete_category,name='admin-dashboard-category-delete'),
+    path('admin-dashboard-category-add/',hv.add_category,name='admin-dashboard-category-add'),
+    path('admin-dashboard-customer-edit/<int:customer_id>/',hv.edit_customer,name='edit_customer'),
+    path('admin-dashboard-customer-delete/<int:customer_id>/',hv.delete_customer,name='delete_customer'),
+    path('admin-dashboard-customer-add/',hv.add_customer,name='admin-dashboard-customer-add'),
+    path('admin-dashboard-foodItems-edit/<int:food_id>/',hv.edit_foodItems,name='edit_food'),
+    path('admin-dashboard-foodItems-delete/<int:food_id>/',hv.delete_foodItems,name='delete_food'),
+    path('admin-dashboard-foodItems-add/',hv.add_foodItems,name='admin-dashboard-foodItems-add'),
 
     
 
