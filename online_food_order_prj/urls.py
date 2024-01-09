@@ -41,7 +41,7 @@ urlpatterns = [
     path('admin-dashboard-foodItems-edit/<int:food_id>/',hv.edit_foodItems,name='edit_food'),
     path('admin-dashboard-foodItems-delete/<int:food_id>/',hv.delete_foodItems,name='delete_food'),
     path('admin-dashboard-foodItems-add/',hv.add_foodItems,name='admin-dashboard-foodItems-add'),
-
+    path('make_reservation/', hv.make_reservation, name='make_reservation'),
     
 
     # path('newHome/',hv.newHome, name='newHome'),

@@ -13,18 +13,22 @@
 
             <div class="report-body">
                 <div class="report-topic-heading">
-                    <h3 class="t-op">Customer Id</h3>
+                    <h3 class="t-op">Name</h3>
                     <h3 class="t-op">Date</h3>
                     <h3 class="t-op">Time</h3>
+                    <h3 class="t-op">No of Person</h3>
+                    <h3 class="t-op">Message</h3>
                     <h3 class="t-op">Request Status</h3>
                     <h3 class="t-op"></h3>
                 </div>
                 <div class="items">
                     {% for reservation in reservations %}
                     <div class="item1">
-                        <h3 class="t-op-nextlvl">{{ reservation.customer_id}}</h3>
+                        <h3 class="t-op-nextlvl">{{ reservation.booking_name}}</h3>
                         <h3 class="t-op-nextlvl">{{ reservation.date}}</h3>
                         <h3 class="t-op-nextlvl">{{ reservation.time}}</h3>
+                        <h3 class="t-op-nextlvl">{{ reservation.total_person}}</h3>
+                        <h3 class="t-op-nextlvl">{{ reservation.message}}</h3>
                         <h3 class="t-op-nextlvl">{{ reservation.status}}</h3>
                         <h3 class="t-op-nextlvl">
                             <div class="update-btn">

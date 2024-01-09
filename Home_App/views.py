@@ -10,11 +10,22 @@ from Home_App.models import customer_table, admin_table, category_table, food_ta
 # from django.http import JsonResponse
 from Home_App.forms import *
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView
 
 
 # Create your views here.
 
 # for customers
+
+class CustomLoginView(LoginView):
+    def get_success_url(self):
+        #  preserving the 'next' parameter if present
+        redirect_url = self.request.GET.get('next','/')
+        return super().get_success_url() + f'?next={redirect_url}' 
+
+
+
 class CustomerTableBackend(ModelBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
         try:
@@ -57,6 +68,8 @@ class CustomerTableBackend(ModelBackend):
                 return redirect('index')
             
         return render(request,'login.html')
+    
+
 
 
     
@@ -339,3 +352,74 @@ def deny_reservation_request(request,reservation_id):
     reservation.status='denied'
     reservation.save()
     return redirect(reverse('admin-dashboard-section',kwargs={'section':'reservation'}))
+
+
+def make_reservation(request):
+    form = ReservationForm()
+    if request.method == 'POST':
+        form =  ReservationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    return render(request,'/login', {'form':form})
+
+# def make_reservation(request):   #at index.html (customer's end)
+#     if request.method == 'POST':
+#         form = ReservationForm(request.POST)
+#         if form.is_valid():
+#             reservation = form.save(commit=False)
+
+#             if 'customer_id' in request.session:
+#                 customer_id = request.session['customer_id']
+
+#                 try:
+#                     customer = customer_table.objects.get(customer_id=customer_id)
+#                     reservation.customer_id = customer  # setting cutomer id based on the logged in user
+#                     reservation.save()
+#                     return render(request,'index.html', {'reservation_success':True})
+#                 except customer_table.DoesNotExist:
+#                     pass
+#             else:
+#                 return render(request, 'index.html', {'form':form, 'authentication_error':True})
+#         else:
+#             print(form.errors)
+#     else:
+#         form = ReservationForm()
+    
+#     return render(request,'index.html', {'form':form})
+
+
+# def make_reservation(request):   #at index.html (customer's end)
+#     if request.method == 'POST':
+#         form = ReservationForm(request.POST)
+#         if form.is_valid():
+#             reservation = form.save(commit=False)
+#             customer_table = request.user.customer_table
+#             reservation.customer_id = customer_table  # setting cutomer id based on the logged in user
+#             reservation.save()
+#             return render(request,'index.html', {'reservation_success':True})
+#         else:
+#             print(form.errors)
+#     else:
+#         form = ReservationForm()
+    
+#     return render(request,'index.html', {'form':form})
+
+# def make_reservation(request):   #at index.html (customer's end)
+#     if request.user.is_authenticated:
+#         print("user is authenticated")
+#         if request.method == 'POST':
+#             form = ReservationForm(request.POST)
+#             if form.is_valid():
+#                 reservation = form.save(commit=False)
+#                 reservation.customer_id = request.user   # setting cutomer id based on the logged in user
+#                 reservation.save()
+#                 return render(request,'index.html', {'reservation_success':True})
+#             else:
+#                 print(form.errors)
+#         else:
+#             form = ReservationForm()
+    
+#         return render(request,'index.html', {'form':form})
+#     else:
+#         return redirect('login')

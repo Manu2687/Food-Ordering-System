@@ -1,5 +1,5 @@
 from django import forms
-from Home_App.models import category_table, customer_table, food_table
+from Home_App.models import category_table, customer_table, food_table, reservation_table
 
 
 from django import forms
@@ -56,3 +56,11 @@ class FoodItemsForm(forms.ModelForm):
         model = food_table
         fields = ['food_title','description','price','img_name','category_id','feature']
 
+
+
+
+# Reservation form at index.html
+class ReservationForm(forms.ModelForm):
+    class Meta:
+        model = reservation_table
+        fields = ['booking_name','time','total_person','date','message']

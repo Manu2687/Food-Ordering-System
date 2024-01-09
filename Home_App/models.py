@@ -76,9 +76,12 @@ class customer_table(models.Model):
 # Reservation Table
 class reservation_table(models.Model):
     reservation_id = models.AutoField(primary_key=True)
-    customer_id = models.ForeignKey(customer_table,on_delete=models.CASCADE)
+    # customer_id = models.ForeignKey(customer_table,on_delete=models.CASCADE)
+    booking_name=models.CharField(max_length=40)
     date = models.DateField()
     time = models.TimeField()
+    total_person=models.IntegerField()
+    message=models.CharField(max_length=255)
     STATUS_CHOICES = [
         ('pending','Pending'),
         ('approved','Approved'),
