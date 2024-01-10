@@ -60,12 +60,13 @@ class CustomerTableBackend(ModelBackend):
             if user is not None:
                 # user credentails are correct then log in the user
                 login(request,user)
+                request.session.set_expiry(30*24*60*60)
                 fname = user.first_name
                 return render(request,"index.html", {'fname':fname})
             else:
                 # user credentials are incorrect, display an error message
                 messages.error(request,"Invalid Credentials!")
-                return redirect('index')
+                # return redirect('index')
             
         return render(request,'login.html')
     
@@ -166,11 +167,14 @@ def signout(request):
 
 
 def index(request):
+    food_items = food_table.objects.all()
+    index_categories_all(request,'all')
     if request.user.is_authenticated:
         fname = request.user.first_name
-        return render(request, 'index.html', { 'fname': fname})
+        return render(request, 'index.html', { 'fname': fname},{'food_items':food_items})
     else:
-        return render(request, 'index.html')
+        return render(request, 'index.html',{'food_items':food_items})
+    
 
 
 def adminLogin(request):
@@ -194,7 +198,8 @@ def adminDashboard(request, section=None):
     customers = customer_table.objects.all()
     customer_count=customer_table.objects.count()
     reservation=reservation_table.objects.all()
-    return render(request, template_name, {'categories':categories, 'categoryCount':category_count, 'foodItems':foodItems, 'food_item_count':foodItem_count, 'customers':customers, 'customerCount':customer_count, 'reservations':reservation})
+    reservation_count=reservation_table.objects.filter(status='pending').count
+    return render(request, template_name, {'categories':categories, 'categoryCount':category_count, 'foodItems':foodItems, 'food_item_count':foodItem_count, 'customers':customers, 'customerCount':customer_count, 'reservations':reservation, 'reservation_count':reservation_count})
 
 
 
@@ -363,20 +368,12 @@ def make_reservation(request):
             return redirect('home')
     return render(request,'/login', {'form':form})
 
-# food items at index.html
-def index(request):
-    food_items = food_table.objects.all()
-    return render(request,'index.html',{'food_items':food_items})
 
-# categories at index.html
-# def index_categories(request):
-#     categoriess = category_table.objects.all()
-#     print(categoriess)
-#     return render(request, 'index.html',{'categoriess':categoriess})
 
 def index_categories_all(request,selected_category):
     food_items = food_table.objects.all()
-    return render(request,'index.html',{'food_items_category_wise':food_items, 'selected_category': selected_category})
+    user = request.user if request.user.is_authenticated else None
+    return render(request,'index.html',{'food_items_category_wise':food_items, 'selected_category': selected_category, 'user':user})
 def index_categories_indian(request,category_id,selected_category):
     food_items = food_table.objects.filter(category_id=category_id)
     return render(request,'index.html',{'food_items_category_wise':food_items, 'selected_category': selected_category})
@@ -389,6 +386,8 @@ def index_categories_pizza(request,category_id,selected_category):
 def index_categories_drinks(request,category_id,selected_category):
     food_items = food_table.objects.filter(category_id=category_id)
     return render(request,'index.html',{'food_items_category_wise':food_items, 'selected_category': selected_category})
+
+
 
 
 

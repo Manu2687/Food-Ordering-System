@@ -54,7 +54,7 @@
         <ul class="navbar-list">
 
           <li class="nav-item">
-            <a href="#inde" class="navbar-link" data-nav-link>Home</a>
+            <a href="#index" class="navbar-link" data-nav-link>Home</a>
           </li>
 
           <li class="nav-item">
@@ -165,7 +165,7 @@
 
             <p class="hero-text">Food is any substance consumed to provide nutritional support for an organism.</p>
 
-            <button class="btn">Book A Table</button>
+            <button class="btn"> <a href="#book-table"> Book A Table </a></button>
 
           </div>
 
@@ -309,7 +309,7 @@
 
             </ul>
 
-            <button class="btn btn-hover">Order Now</button>
+            <a href="#food-menu" ><button class="btn btn-hover" >Order Now</button></a>
 
           </div>
 
@@ -324,288 +324,6 @@
         - #FOOD MENU
       -->
 
-
-      
-
-      <!-- <section class="section food-menu" id="food-menu">
-        <div class="container">
-
-          <p class="section-subtitle">Popular Dishes</p>
-
-          <h2 class="h2 section-title">
-            Our Delicious <span class="span">Foods</span>
-          </h2>
-
-          <p class="section-text">
-            Food is any substance consumed to provide nutritional support for an organism.
-          </p>
-
-          
-          <ul class="fiter-list">
-
-            <li>
-              <button class="filter-btn  active">All</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Pizza</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Burger</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Drinks</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Sandwich</button>
-            </li>
-
-          </ul>
-
-          <ul class="food-menu-list">
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="{% static 'images/food-menu-1.png' %}" width="300" height="300" loading="lazy"
-                    alt="Fried Chicken Unlimited" class="w-100">
-
-                  <div class="badge">-15%</div>
-
-                  <button class="btn food-menu-btn">Order Now</button>
-                </div>
-
-                <div class="wrapper">
-                  <p class="category">Chicken</p>
-
-                  <div class="rating-wrapper">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </div>
-
-                <h3 class="h3 card-title">Fried Chicken Unlimited</h3>
-
-                <div class="price-wrapper">
-
-                  <p class="price-text">Price:</p>
-
-                  <data class="price">$49.00</data>
-
-                  <del class="del" value="69.00">$69.00</del>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="{% static 'images/food-menu-2.png' %}" width="300" height="300" loading="lazy"
-                    alt="Burger King Whopper" class="w-100">
-
-                  <div class="badge">-10%</div>
-
-                  <button class="btn food-menu-btn">Order Now</button>
-                </div>
-
-                <div class="wrapper">
-                  <p class="category">Noddles</p>
-
-                  <div class="rating-wrapper">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </div>
-
-                <h3 class="h3 card-title">Burger King Whopper</h3>
-
-                <div class="price-wrapper">
-
-                  <p class="price-text">Price:</p>
-
-                  <data class="price" value="29.00">$29.00</data>
-
-                  <del class="del">$39.00</del>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="{% static 'images/food-menu-3.png' %}" width="300" height="300" loading="lazy"
-                    alt="White Castle Pizzas" class="w-100">
-
-                  <div class="badge">-25%</div>
-
-                  <button class="btn food-menu-btn">Order Now</button>
-                </div>
-
-                <div class="wrapper">
-                  <p class="category">Pizzas</p>
-
-                  <div class="rating-wrapper">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </div>
-
-                <h3 class="h3 card-title">White Castle Pizzas</h3>
-
-                <div class="price-wrapper">
-
-                  <p class="price-text">Price:</p>
-
-                  <data class="price" value="49.00">$49.00</data>
-
-                  <del class="del">$69.00</del>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="{% static 'images/food-menu-4.png' %}" width="300" height="300" loading="lazy"
-                    alt="Bell Burrito Supreme" class="w-100">
-
-                  <div class="badge">-20%</div>
-
-                  <button class="btn food-menu-btn">Order Now</button>
-                </div>
-
-                <div class="wrapper">
-                  <p class="category">Burrito</p>
-
-                  <div class="rating-wrapper">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </div>
-
-                <h3 class="h3 card-title">Bell Burrito Supreme</h3>
-
-                <div class="price-wrapper">
-
-                  <p class="price-text">Price:</p>
-
-                  <data class="price" value="59.00 ">$59.00</data>
-
-                  <del class="del">$69.00</del>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="{% static 'images/food-menu-5.png' %}" width="300" height="300" loading="lazy"
-                    alt="Kung Pao Chicken BBQ" class="w-100">
-
-                  <div class="badge">-5%</div>
-
-                  <button class="btn food-menu-btn">Order Now</button>
-                </div>
-
-                <div class="wrapper">
-                  <p class="category">Nuggets</p>
-
-                  <div class="rating-wrapper">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </div>
-
-                <h3 class="h3 card-title">Kung Pao Chicken BBQ</h3>
-
-                <div class="price-wrapper">
-
-                  <p class="price-text">Price:</p>
-
-                  <data class="price" value="49.00">$49.00</data>
-
-                  <del class="del">$69.00</del>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="food-menu-card">
-
-                <div class="card-banner">
-                  <img src="{% static 'images/food-menu-6.png' %}" width="300" height="300" loading="lazy"
-                    alt="Wendy's Chicken" class="w-100">
-
-                  <div class="badge">-15%</div>
-
-                  <button class="btn food-menu-btn">Order Now</button>
-                </div>
-
-                <div class="wrapper">
-                  <p class="category">Chicken</p>
-
-                  <div class="rating-wrapper">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </div>
-
-                <h3 class="h3 card-title">Wendy's Chicken</h3>
-
-                <div class="price-wrapper">
-
-                  <p class="price-text">Price:</p>
-
-                  <data class="price" value="49.00">$49.00</data>
-
-                  <del class="del">$69.00</del>
-
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-
-        </div>
-      </section> -->
 
 
 
@@ -625,24 +343,24 @@
           
           <ul class="fiter-list">
 
-            <li>
-              <a href="{% url 'category-all' selected_category='all' %}" class="filter-btn {% if selected_category == 'all' %}active{% endif %}" onclick="toggleActive(this)">All</a>
+            <li id="all">
+              <a href="{% url 'category-all' selected_category='all' %}#all" class="filter-btn {% if selected_category == 'all' %}active{% endif %}" >All</a>
             </li>
 
-            <li>
-              <a href="{% url 'category-pizza' selected_category='pizza' category_id=8 %}" class="filter-btn {% if selected_category == 'pizza' %}active{% endif %}" onclick="toggleActive(this)">Pizza</a>
+            <li id="pizza">
+              <a href="{% url 'category-pizza' selected_category='pizza' category_id=8 %}#pizza" class="filter-btn {% if selected_category == 'pizza' %}active{% endif %}" >Pizza</a>
             </li>
 
-            <li>
-              <a href="{% url 'category-drinks' selected_category='drinks' category_id=5 %}" class="filter-btn {% if selected_category == 'drinks' %}active{% endif %}" onclick="toggleActive(this)">Drinks</a>
+            <li id="drinks">
+              <a href="{% url 'category-drinks' selected_category='drinks' category_id=5 %}#drinks" class="filter-btn {% if selected_category == 'drinks' %}active{% endif %}" >Drinks</a>
             </li>
 
-            <li>
-              <a href="{% url 'category-chinese' selected_category='chinese' category_id=11 %}" class="filter-btn {% if selected_category == 'chinese' %}active{% endif %}" onclick="toggleActive(this)">Chinese</a>
+            <li id="chinese">
+              <a href="{% url 'category-chinese' selected_category='chinese' category_id=11 %}#chinese" class="filter-btn {% if selected_category == 'chinese' %}active{% endif %}" >Chinese</a>
             </li>
 
-            <li>
-              <a href="{% url 'category-indian' selected_category='indian' category_id=7 %}" class="filter-btn {% if selected_category == 'indian' %}active{% endif %}" onclick="toggleActive(this)">Indian Cuisine</a>
+            <li id="indian">
+              <a href="{% url 'category-indian' selected_category='indian' category_id=7 %}#indian" class="filter-btn {% if selected_category == 'indian' %}active{% endif %}" >Indian Cuisine</a>
             </li>
 
           </ul>
@@ -701,50 +419,6 @@
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #CTA
-      -->
-
-      <!-- <section class="section section-divider white cta" style="background-image: url('{% static 'images/hero-bg.jpg' %}')"> -->
-      <section class="section section-divider white cta" id="section-background">
-
-        <div class="container">
-
-          <div class="cta-content">
-
-            <h2 class="h2 section-title">
-              The Foodie Have Excellent Of
-              <span class="span">Quality Burgers!</span>
-            </h2>
-
-            <p class="section-text">
-              The restaurants in Hangzhou also catered to many northern Chinese who had fled south from Kaifeng during
-              the Jurchen
-              invasion of the 1120s, while it is also known that many restaurants were run by families.
-            </p>
-
-            <button class="btn btn-hover">Order Now</button>
-          </div>
-
-          <figure class="cta-banner">
-            <img src="{% static 'images/cta-banner.png' %}" width="700" height="637" loading="lazy" alt="Burger"
-              class="w-100 cta-img">
-
-            <img src="{% static 'images/sale-shape.png' %}" width="216" height="226" loading="lazy"
-              alt="get up to 50% off now" class="abs-img scale-up-anim">
-          </figure>
-
-        </div>
-      </section>
-
-
-
-
-
       <!-- 
         - #DELIVERY
       -->
@@ -764,14 +438,14 @@
               invasion of the 1120s, while it is also known that many restaurants were run by families.
             </p>
 
-            <button class="btn btn-hover">Order Now</button>
+            <a href="#food-menu"><button class="btn btn-hover">Order Now</button></a>
           </div>
 
           <figure class="delivery-banner">
             <img src="{% static 'images/delivery-banner-bg.png' %}" width="700" height="602" loading="lazy" alt="clouds"
               class="w-100">
 
-            <img src="{% static 'images/delivery-boy.svg" width="1000" height="880" loading="lazy" alt="delivery boy"
+            <img src="{% static 'images/delivery-boy.svg' %}" width="1000" height="880" loading="lazy" alt="delivery boy"
               class="w-100 delivery-img" data-delivery-boy>
           </figure>
 
@@ -910,98 +584,6 @@
       </section>
 
 
-
-
-
-
-      <!-- 
-        - #BANNER
-      -->
-
-      <section class="section section-divider gray banner">
-        <div class="container">
-
-          <ul class="banner-list">
-
-            <li class="banner-item banner-lg">
-              <div class="banner-card">
-
-                <img src="{% static 'images/banner-1.jpg' %}" width="550" height="450" loading="lazy"
-                  alt="Discount For Delicious Tasty Burgers!" class="banner-img">
-
-                <div class="banner-item-content">
-                  <p class="banner-subtitle">50% Off Now!</p>
-
-                  <h3 class="banner-title">Discount For Delicious Tasty Burgers!</h3>
-
-                  <p class="banner-text">Sale off 50% only this week</p>
-
-                  <button class="btn">Order Now</button>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="banner-item banner-sm">
-              <div class="banner-card">
-
-                <img src="{% static 'images/banner-2.jpg' %}" width="550" height="465" loading="lazy"
-                  alt="Delicious Pizza" class="banner-img">
-
-                <div class="banner-item-content">
-                  <h3 class="banner-title">Delicious Pizza</h3>
-
-                  <p class="banner-text">50% off Now</p>
-
-                  <button class="btn">Order Now</button>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="banner-item banner-sm">
-              <div class="banner-card">
-
-                <img src="{% static 'images/banner-3.jpg' %}" width="550" height="465" loading="lazy"
-                  alt="American Burgers" class="banner-img">
-
-                <div class="banner-item-content">
-                  <h3 class="banner-title">American Burgers</h3>
-
-                  <p class="banner-text">50% off Now</p>
-
-                  <button class="btn">Order Now</button>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="banner-item banner-md">
-              <div class="banner-card">
-
-                <img src="{% static 'images/banner-4.jpg' %}" width="550" height="220" loading="lazy"
-                  alt="Tasty Buzzed Pizza" class="banner-img">
-
-                <div class="banner-item-content">
-                  <h3 class="banner-title">Tasty Buzzed Pizza</h3>
-
-                  <p class="banner-text">Sale off 50% only this week</p>
-
-                  <button class="btn">Order Now</button>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-
-
       <!-- 
         - #BLOG
       -->
@@ -1038,19 +620,18 @@
                     <a href="#" class="card-meta-link">
                       <ion-icon name="calendar-outline"></ion-icon>
 
-                      <time class="meta-info" datetime="2022-01-01">Jan 01 2022</time>
+                      <time class="meta-info" datetime="2022-01-01">Jan 10 2024</time>
                     </a>
 
                     <a href="#" class="card-meta-link">
                       <ion-icon name="person-outline"></ion-icon>
 
-                      <p class="meta-info">Jonathan Smith</p>
                     </a>
 
                   </div>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">What Do You Think About Cheese Pizza Recipes?</a>
+                    <a href="https://sallysbakingaddiction.com/homemade-extra-cheese-pizza/" class="card-title">What Do You Think About Cheese Pizza Recipes?</a>
                   </h3>
 
                   <p class="card-text">
@@ -1075,7 +656,7 @@
                   <img src="{% static 'images/blog-2.jpg' %}" width="600" height="390" loading="lazy"
                     alt="Making Chicken Strips With New Delicious Ingridents." class="w-100">
 
-                  <div class="badge">Burger</div>
+                  <div class="badge">Sandwiches</div>
                 </div>
 
                 <div class="card-content">
@@ -1085,19 +666,18 @@
                     <a href="#" class="card-meta-link">
                       <ion-icon name="calendar-outline"></ion-icon>
 
-                      <time class="meta-info" datetime="2022-01-01">Jan 01 2022</time>
+                      <time class="meta-info" datetime="2022-01-01">Jan 10 2024</time>
                     </a>
 
                     <a href="#" class="card-meta-link">
                       <ion-icon name="person-outline"></ion-icon>
 
-                      <p class="meta-info">Jonathan Smith</p>
                     </a>
 
                   </div>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Making Chicken Strips With New Delicious Ingridents.</a>
+                    <a href="https://www.bbcgoodfood.com/recipes/collection/healthy-sandwich-recipes" class="card-title">Healthy sandwich recipes</a>
                   </h3>
 
                   <p class="card-text">
@@ -1132,19 +712,15 @@
                     <a href="#" class="card-meta-link">
                       <ion-icon name="calendar-outline"></ion-icon>
 
-                      <time class="meta-info" datetime="2022-01-01">Jan 01 2022</time>
+                      <time class="meta-info" datetime="2022-01-01">Jan 10 2024</time>
                     </a>
 
-                    <a href="#" class="card-meta-link">
-                      <ion-icon name="person-outline"></ion-icon>
-
-                      <p class="meta-info">Jonathan Smith</p>
-                    </a>
+                    
 
                   </div>
 
                   <h3 class="h3">
-                    <a href="#" class="card-title">Innovative Hot Chessyraw Pasta Make Creator Fact.</a>
+                    <a href="https://www.yummytummyaarthi.com/chicken-kebab/" class="card-title">Innovative Hot Chessy Kabab Recipe.</a>
                   </h3>
 
                   <p class="card-text">

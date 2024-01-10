@@ -300,35 +300,12 @@ header {
   overflow-x: auto; 
   padding: 20px; 
 } 
-.report-topic-heading, 
-.item1 { 
-  width: 1120px; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-} 
-.t-op { 
-  font-size: 18px; 
-  letter-spacing: 0px; 
-} 
-  
-.items { 
-  width: 1120px; 
-  margin-top: 15px; 
-} 
-  
-.item1 { 
-  margin-top: 20px; 
-} 
-.t-op-nextlvl { 
-  font-size: 14px; 
-  letter-spacing: 0px; 
-  font-weight: 600; 
-} 
+
+
   
 .label-tag { 
   width: 100px; 
-  text-align: center; 
+  text-align: left; 
   background-color:hsl(3, 90%, 55%); 
   color: white; 
   border-radius: 4px; 
@@ -347,6 +324,34 @@ a {
 .a-dash {
   color: white;
 }
+
+
+
+/* .report-topic-head, 
+.item12 { 
+  width: 1120px; 
+  display: flex; 
+  justify-content: left; 
+  align-items: start; 
+} 
+.t-op { 
+  font-size: 18px; 
+  letter-spacing: 0px; 
+} 
+.t-op-nextlvl { 
+  font-size: 12px; 
+  letter-spacing: 0px; 
+  font-weight: 600; 
+} 
+  
+.items { 
+  width: 1120px; 
+  margin-top: 15px; 
+} 
+  
+.item1 { 
+  margin-top: 20px; 
+}  */
 
 
 

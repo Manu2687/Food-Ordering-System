@@ -451,23 +451,7 @@
   
   .navbar-link:is(:hover, :focus) { color: var(--dark-orange); }
 
-  /* Admin dashboard button - manu */
-  .admin-dash-btn {
-    background-color: hsl(31, 84%, 50%);; 
-    font-size: var(--fs-4);
-    font-family: var(--ff-rubik);
-    font-weight: var(--fw-500);
-    padding: 10px 15px;
-    color: rgb(255, 255, 255); 
-    border: 2px solid #f44336;
-    border-radius: 25px;
-  }
-  .admin-dash-btn:hover {
-    transform: translateX(+40%);
-    transition: var(--transition-1);
-    background-color:hsl(3, 90%, 55%);
-    color: white;
-  }
+ 
   
   
   
@@ -1818,6 +1802,35 @@
 
 
 /*           //////////////////////////////////                  */
+
+ /* Admin dashboard button  */
+ .admin-dash-btn {
+  background-color:dark orange; 
+  font-size: var(--fs-4);
+  font-family: var(--ff-rubik);
+  font-weight: var(--fw-500);
+  padding: 10px 15px;
+  color: rgb(255, 255, 255); 
+  border-radius: 25px;
+}
+.admin-dash-btn:hover {
+  transition: var(--transition-1);
+  background-color:black;
+  color: white;
+}
+.admin-dash:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 20px;
+  width: 1px;
+  height: 1px;
+  transform: translate(-50%, 51%) scale(var(--scale, 1));
+  border-radius: 50%;
+  background-color: var(--rich-black-fogra-29);
+  z-index: -1;
+  transition: var(--transition-2);
+}
 
   .fixed-size-image {
     width: 200px;

@@ -62,7 +62,7 @@ ROOT_URLCONF = 'online_food_order_prj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Template'],
+        'DIRS': ['docs'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
