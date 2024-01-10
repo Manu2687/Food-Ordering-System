@@ -662,7 +662,8 @@
   
   .promo-item {
     min-width: 100%;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
+    /* display: inline-block; */
   }
   
   
@@ -1809,3 +1810,20 @@
     .footer-top .container { grid-template-columns: 1.4fr 1fr 1fr 1.6fr; }
   
   }
+
+
+
+
+
+
+
+/*           //////////////////////////////////                  */
+
+  .fixed-size-image {
+    width: 200px;
+    height: 200px;
+    display:block;
+    margin: 0 auto;
+  }
+  
+  

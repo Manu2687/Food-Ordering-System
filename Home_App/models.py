@@ -13,6 +13,17 @@ class category_table(models.Model):
 
     def __str__(self):
         return str(self.category_id)
+    
+#Food
+class food_table(models.Model):
+    food_id = models.AutoField(primary_key=True)
+    food_title = models.CharField(max_length=30)
+    description = models.CharField(max_length=50)
+    price = models.IntegerField()
+    img_name = models.CharField(max_length=20)
+    category_id = models.ForeignKey(category_table,on_delete=models.CASCADE)
+    feature = models.CharField(max_length=20)
+
 
 #Order
 class order_table(models.Model):
@@ -35,17 +46,6 @@ class order_table(models.Model):
             ),
         ]
     )
-
-
-#Food
-class food_table(models.Model):
-    food_id = models.AutoField(primary_key=True)
-    food_title = models.CharField(max_length=30)
-    description = models.CharField(max_length=50)
-    price = models.IntegerField()
-    img_name = models.CharField(max_length=20)
-    category_id = models.ForeignKey(category_table,on_delete=models.CASCADE)
-    feature = models.CharField(max_length=20)
     
 
 

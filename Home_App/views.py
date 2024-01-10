@@ -363,63 +363,33 @@ def make_reservation(request):
             return redirect('home')
     return render(request,'/login', {'form':form})
 
-# def make_reservation(request):   #at index.html (customer's end)
-#     if request.method == 'POST':
-#         form = ReservationForm(request.POST)
-#         if form.is_valid():
-#             reservation = form.save(commit=False)
+# food items at index.html
+def index(request):
+    food_items = food_table.objects.all()
+    return render(request,'index.html',{'food_items':food_items})
 
-#             if 'customer_id' in request.session:
-#                 customer_id = request.session['customer_id']
+# categories at index.html
+# def index_categories(request):
+#     categoriess = category_table.objects.all()
+#     print(categoriess)
+#     return render(request, 'index.html',{'categoriess':categoriess})
 
-#                 try:
-#                     customer = customer_table.objects.get(customer_id=customer_id)
-#                     reservation.customer_id = customer  # setting cutomer id based on the logged in user
-#                     reservation.save()
-#                     return render(request,'index.html', {'reservation_success':True})
-#                 except customer_table.DoesNotExist:
-#                     pass
-#             else:
-#                 return render(request, 'index.html', {'form':form, 'authentication_error':True})
-#         else:
-#             print(form.errors)
-#     else:
-#         form = ReservationForm()
+def index_categories_all(request,selected_category):
+    food_items = food_table.objects.all()
+    return render(request,'index.html',{'food_items_category_wise':food_items, 'selected_category': selected_category})
+def index_categories_indian(request,category_id,selected_category):
+    food_items = food_table.objects.filter(category_id=category_id)
+    return render(request,'index.html',{'food_items_category_wise':food_items, 'selected_category': selected_category})
+def index_categories_chinese(request,category_id,selected_category):
+    food_items = food_table.objects.filter(category_id=category_id)
+    return render(request,'index.html',{'food_items_category_wise':food_items, 'selected_category': selected_category})
+def index_categories_pizza(request,category_id,selected_category):
+    food_items = food_table.objects.filter(category_id=category_id)
+    return render(request,'index.html',{'food_items_category_wise':food_items, 'selected_category': selected_category})
+def index_categories_drinks(request,category_id,selected_category):
+    food_items = food_table.objects.filter(category_id=category_id)
+    return render(request,'index.html',{'food_items_category_wise':food_items, 'selected_category': selected_category})
+
+
+
     
-#     return render(request,'index.html', {'form':form})
-
-
-# def make_reservation(request):   #at index.html (customer's end)
-#     if request.method == 'POST':
-#         form = ReservationForm(request.POST)
-#         if form.is_valid():
-#             reservation = form.save(commit=False)
-#             customer_table = request.user.customer_table
-#             reservation.customer_id = customer_table  # setting cutomer id based on the logged in user
-#             reservation.save()
-#             return render(request,'index.html', {'reservation_success':True})
-#         else:
-#             print(form.errors)
-#     else:
-#         form = ReservationForm()
-    
-#     return render(request,'index.html', {'form':form})
-
-# def make_reservation(request):   #at index.html (customer's end)
-#     if request.user.is_authenticated:
-#         print("user is authenticated")
-#         if request.method == 'POST':
-#             form = ReservationForm(request.POST)
-#             if form.is_valid():
-#                 reservation = form.save(commit=False)
-#                 reservation.customer_id = request.user   # setting cutomer id based on the logged in user
-#                 reservation.save()
-#                 return render(request,'index.html', {'reservation_success':True})
-#             else:
-#                 print(form.errors)
-#         else:
-#             form = ReservationForm()
-    
-#         return render(request,'index.html', {'form':form})
-#     else:
-#         return redirect('login')
