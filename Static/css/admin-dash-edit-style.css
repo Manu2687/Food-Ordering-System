@@ -1,7 +1,7 @@
-
+/* 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f2f2f2;
+    background-color: #cad7fda4;
     margin: 0px;
 }
 
@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-left: 30%;
 }
 
@@ -17,7 +17,7 @@ form {
     max-width: 400px;
     width: 100%;
     padding: 20px;
-    background-color: #fff;
+    background-color: #cad7fda4;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -44,4 +44,4 @@ button {
 
 button:hover {
     background-color: #45a049;
-}
+} */
